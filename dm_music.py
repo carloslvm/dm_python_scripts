@@ -38,5 +38,3 @@ command = find_mp3 + '| ' + dmenu + '| ' + sed + '| ' + play
 
 # Executing command
 os.system(command)
-
-#NICE
