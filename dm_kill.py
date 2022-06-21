@@ -29,7 +29,7 @@ proc = "ps -faux "
 dmenu = prompt_def + prompt_mes + text_color + selector + f_selector
 
 # Getting Process ID
-proc_id = "cut --delimiter=' ' -f 4 "
+proc_id = "cut --delimiter=' ' -f 5 "
 
 # Kill process
 kill = "xargs kill"
