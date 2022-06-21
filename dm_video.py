@@ -22,7 +22,6 @@ text_color = "-nf \"#028DFE\" "
 selector = "-sb \"#103962\" "
 f_selector = "-sf \"#11FF00\" "
 misc = '-l 20 '
-pipe = '| '
 
 # Getting Full Paths of videos
 find_video = "find /home/carlos/Videos/ -name \"*.mp4\" "
