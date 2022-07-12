@@ -23,13 +23,13 @@ f_selector = '-sf "#F79707" '
 misc = "-b -l 20 " # Appears at the bottom of screen, 20 lines.
 
 # System processes
-proc = "ps -faux "
+proc = "ps -e "
 
 # dmenu command
 dmenu = prompt_def + prompt_mes + text_color + selector + f_selector
 
 # Getting Process ID
-proc_id = "cut --delimiter=' ' -f 5 "
+proc_id = "cut --delimiter=' ' -f 1,2 "
 
 # Kill process
 kill = "xargs kill"
