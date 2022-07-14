@@ -8,11 +8,26 @@ Processes will be shown on dmenu, search or type the process
 you need to kill and once you press enter that process will
 stop running.
 
+This script needs one argument to be executed, that argument
+will determine whether to kill, stop or resume the process.
+
+EXAMPLES:
+
+    * ./dm_kill.py kill
+    * ./dm_kill.py stop
+    * ./dm_kill.py cont
+
+I used ps command to display processes so it is recommended
+to take a look at its documentation in order to learn how
+to identify the status of a process.
+
+
 Author: Carlos Valdez
 
 """
 
 import os
+from sys import argv
 
 # dmenu appereance
 prompt_def = "dmenu -p "
@@ -23,7 +38,7 @@ f_selector = '-sf "#F79707" '
 misc = "-b -l 20 " # Appears at the bottom of screen, 20 lines.
 
 # System processes
-proc = "ps -e "
+proc = "ps -ex "
 
 # dmenu command
 dmenu = prompt_def + prompt_mes + text_color + selector + f_selector
@@ -32,7 +47,14 @@ dmenu = prompt_def + prompt_mes + text_color + selector + f_selector
 proc_id = "cut --delimiter=' ' -f 1,2 "
 
 # Kill process
-kill = "xargs kill"
+option = argv[1]
+
+if option == 'kill': 
+    kill = "xargs kill" # Kill the process (no possible to resume)
+elif option == 'cont':
+    kill = "xargs kill -18" # Resume process
+elif option == 'stop':
+    kill = "xargs kill -19" # Stop process
 
 # Full command
 command = proc + '| ' + dmenu + misc + '| ' + proc_id + '| ' + kill
