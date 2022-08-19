@@ -3,7 +3,7 @@
 """
 The main idea of this script is to be able to play music located in
 the Music directory using mpv as backend and dmenu as music selector,
-so you will need to install mpv and dmenu to make it work.
+so you will need to install mpv and dmenu. 
 
 You may also need to change path of the music directory to your
 needs.
