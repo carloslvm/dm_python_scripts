@@ -50,9 +50,14 @@ sed = 'sed -e \'s/.*/"&"/\' '
 
 # Video Player
 play_video = 'xargs mpv'
+#play_video = 'xargs mpv -vo x11'
 
 # Full command
 command = find_video + '| ' + dmenu + '| ' + sed + '| ' + play_video
 
 # Executing command
 os.system(command)
+
+# NOTE: I experienced some audio/video desynchronization.
+#       It seems the command "mpv -vo x11" fixed the issue.
+#       Uncomment line 53 and comment line 52 if this happens.
