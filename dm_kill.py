@@ -13,7 +13,7 @@ will determine whether to kill, stop or resume the process.
 
 EXAMPLES:
 
-    * ./dm_kill.py kill
+    * ./dm_kill.py killing
     * ./dm_kill.py stop
     * ./dm_kill.py cont
 
@@ -49,15 +49,15 @@ proc_id = "cut --delimiter=' ' -f 1,2 "
 # Kill process
 option = argv[1]
 
-if option == 'kill': 
-    kill = "xargs kill" # Kill the process (no possible to resume)
+if option == 'killing': 
+    killing = "xargs kill" # Kill the process (no possible to resume)
 elif option == 'cont':
-    kill = "xargs kill -18" # Resume process
+    killing = "xargs kill -18" # Resume process
 elif option == 'stop':
-    kill = "xargs kill -19" # Stop process
+    killing = "xargs kill -19" # Stop process
 
 # Full command
-command = proc + '| ' + dmenu + misc + '| ' + proc_id + '| ' + kill
+command = proc + '| ' + dmenu + misc + '| ' + proc_id + '| ' + killing
 
 #Execute command
 os.system(command)
