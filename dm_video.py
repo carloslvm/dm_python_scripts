@@ -2,7 +2,7 @@
 
 """
 This script uses mpv and dmenu to play videos located
-in the Videos directory. This script was tested only
+in the specified directory. This script was tested only
 on Linux system.
 
 Select the video you want to play from the list shown
