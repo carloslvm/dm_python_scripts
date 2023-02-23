@@ -55,6 +55,8 @@ elif option == 'cont':
     killing = "xargs kill -18" # Resume process
 elif option == 'stop':
     killing = "xargs kill -19" # Stop process
+else:
+    print("Option not available.")
 
 # Full command
 command = proc + '| ' + dmenu + misc + '| ' + proc_id + '| ' + killing
