@@ -39,17 +39,19 @@ if argument == 'directory':
     directories = 'find /home/carlos/Pictures/ -type d '
 elif argument == 'file':
     prompt_mes = ' Image '
-    find_image = 'find /home/carlos/Pictures/ -name "*[!xfc]" '
+    find_image = 'find /home/carlos/Pictures/ -name "*[!xcf]" '
 
 # dmenu command
 dmenu = prompt_def + prompt_mes + text_color + selector + f_selector + misc
+
+# Adding quotes to dmenu output in order to open gimp properly
+sed = 'sed -e \'s/.*/"&"/\' '
 
 # Viewing images
 if argument == 'directory':
     command = directories + '| ' + dmenu + ' | ' + 'xargs sxiv -t'
 elif argument == 'file':
-    command = find_image + '| ' + dmenu + ' | ' + 'xargs sxiv'
+    command = find_image + '| ' + dmenu + ' | ' + sed + '| ' + 'xargs sxiv'
 
 # Excute command
 os.system(command)
-
