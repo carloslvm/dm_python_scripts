@@ -37,5 +37,4 @@ sed = 'sed -e \'s/.*/"&"/\' '
 command = show_wallpapers + '| ' + dmenu + '| ' + sed + '| ' + feh
 
 # Excuting command
-#print(command)
 os.system(command)
