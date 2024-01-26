@@ -24,7 +24,7 @@ misc = '-l 10 '
 prompt_mes = "dmenu -p \"Select Book\" "
 
 # Find Book to read
-find_book = "find /home/carlos/Documents/Books/ -type f "
+find_book = "find /home/carlos/Documents/Books/ -name \"*[!epub$]\" "
 
 # dmenu commando
 dmenu = prompt_mes + text_color + selector + f_selector + misc
@@ -36,5 +36,4 @@ sed = 'sed -e \'s/.*/"&"/\' '
 command = find_book + ' | ' + dmenu + ' | ' + sed + ' | ' + "xargs zathura"
 
 # Excute command
-#print(command)
 os.system(command)
