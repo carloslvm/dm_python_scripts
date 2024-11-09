@@ -12,9 +12,9 @@ in fullscreen.
 Usage:
     This script needs an argument, that argument is
     the path of the directory where videos are located.
-    
+
     EXAMPLES:
-        
+
         * python3 dm_video.py PATH
         * ./dm_video.py PATH
 
@@ -30,7 +30,7 @@ Author: Carlos Valdez
 import os
 from sys import argv
 
-# Dmenu appearance 
+# Dmenu appearance
 prompt_def = "dmenu -p "
 prompt_mes = "\"Play Video\" "
 text_color = "-nf \"#028DFE\" "
@@ -40,7 +40,7 @@ misc = '-l 20 '
 
 # Getting Full Paths of videos
 script, directory = argv
-find_video = "find " + directory + " -name \"*.mp4\" "
+find_video = "find " + "/home/carlos/" + directory + " -name \"*.mp4\" "
 
 # dmenu command
 dmenu = prompt_def + prompt_mes + text_color + selector + f_selector + misc
